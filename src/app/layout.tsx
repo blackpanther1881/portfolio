@@ -1,7 +1,10 @@
 import "./globals.css";
 import { Metadata } from "next";
 import Script from "next/script";
-import {Provider} from "./providers";
+import {Box, ChakraProvider} from "@chakra-ui/react";
+import Footer from "@/containers/footer";
+import Header from "@/containers/header";
+import theme from "@/styles/theme";
 const baseUrl = "";
 
 const GA_TRACKING_ID = "";
@@ -80,9 +83,16 @@ export default function RootLayout({
         />
       </head>
       <body>
-      <Provider>
-        {children}
-      </Provider>
+      <ChakraProvider
+          theme={theme}>
+        <Box pos={"fixed"} width="100%" zIndex="sticky">
+          <Header />
+        </Box>
+        <Box>
+          {children}
+        </Box>
+        <Footer />
+      </ChakraProvider>
       </body>
       </html>
   );
