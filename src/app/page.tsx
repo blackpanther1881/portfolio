@@ -1,11 +1,17 @@
 "use client";
-import { Container, Flex, Box, Image, Text, HStack } from "@chakra-ui/react";
+import { Box, HStack, Text, Image, useBreakpointValue } from "@chakra-ui/react";
 import HeroSection from "@/containers/home-page/hero-section";
 import About from "@/containers/home-page/about";
 import Projects from "@/containers/home-page/projects";
-import { base } from "framer-motion/client";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+
+const MotionBox = motion(Box);
 
 export default function Home() {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isDesktop = useBreakpointValue({ base: false, lg: true });
+
   return (
     <Box maxWidth={"1440px"} mx={"auto"} px={4}>
       <HStack
@@ -21,15 +27,21 @@ export default function Home() {
         }}
         flexDir={{ base: "column", lg: "row" }}
       >
-        <Box
-          // bgImage={"/images/hero-bg-dark.svg"}
-          // bgRepeat={"no-repeat"}
-          // bgPos={"bottom"}
-          // bgSize={"contain"}
-          position={{ base: "relative", lg: "sticky" }}
+        <MotionBox
+          ref={cardRef}
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 60,
+            damping: 15,
+            duration: 0.8,
+          }}
+          position={{ base: "static", lg: "sticky" }}
           top={{ base: "0px", lg: "100px" }}
           maxW={{ base: "100%", lg: "400px" }}
           maxH={"80vh"}
+          zIndex={2}
         >
           <Box
             px={8}
@@ -49,7 +61,6 @@ export default function Home() {
               overflow={"hidden"}
               maxH={"350px"}
               filter={"grayscale(50%)"}
-              // border={"10px solid"}
               borderColor={"brand.200"}
               borderRadius={"12px"}
               mb="30px"
@@ -81,7 +92,7 @@ export default function Home() {
               with clean, scalable UI/UX.
             </Text>
           </Box>
-        </Box>
+        </MotionBox>
 
         <Box>
           <HeroSection />
