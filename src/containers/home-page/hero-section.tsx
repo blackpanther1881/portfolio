@@ -1,35 +1,35 @@
-import { Box, HStack, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, HStack, Link, Text, useMediaQuery } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Typewriter, useTypewriter } from "react-simple-typewriter";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  IconBrandLinkedin,
-  IconBrandGithub,
-  IconPhoneCall,
-  IconMail,
+  IconBrandGithubFilled,
+  IconPhoneFilled,
+  IconMailFilled,
+  IconBrandLinkedinFilled,
 } from "@tabler/icons-react";
 
 const socialLinks = [
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/raju-vemula-1b0a6b1b2/",
-    icon: <IconBrandLinkedin size={"34px"} color="#fff" />,
+    icon: <IconBrandLinkedinFilled size={"20px"} />,
   },
   {
     name: "GitHub",
     url: "/",
-    icon: <IconBrandGithub size={"34px"} color="#fff" />,
+    icon: <IconBrandGithubFilled size={"20px"} />,
   },
   {
     name: "Mail",
     url: "/",
-    icon: <IconMail size={"34px"} color="#fff" />,
+    icon: <IconMailFilled size={"20px"} />,
   },
   {
     name: "Phone",
     url: "/",
-    icon: <IconPhoneCall size={"34px"} color="#fff" />,
+    icon: <IconPhoneFilled size={"20px"} />,
   },
 ];
 
@@ -79,14 +79,15 @@ const HeroSection = () => {
         //   xl: "100vh", // 80em+
         //   "2xl": "100vh",
         // }}
-        pt={{
-          base: "100px",
-          md: "100px",
-          lg: "100px",
-          xl: "200px",
-          "2xl": "200px",
-        }}
-        px={{ base: "30px", lg: "70px" }}
+        // pt={{
+        //   base: "100px",
+        //   md: "100px",
+        //   lg: "100px",
+        //   xl: "200px",
+        //   "2xl": "200px",
+        // }}
+        pt={"40px"}
+        px={{ base: "10px", lg: "70px" }}
         pos={"relative"}
         display={"flex"}
         zIndex={10}
@@ -111,10 +112,10 @@ const HeroSection = () => {
             >
               <Text
                 mb={0}
-                color="text.500"
+                color="white.700"
                 lineHeight={"150%"}
                 fontWeight={500}
-                fontSize={"70px"}
+                fontSize={{ base: "32px", md: "34px", lg: "44px" }}
               >
                 {text}
               </Text>
@@ -129,15 +130,15 @@ const HeroSection = () => {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.5 }}
                   style={{
-                    width: isLaptop ? "500px" : "100px",
+                    width: isLaptop ? "500px" : "300px",
                     textAlign: "left",
                   }}
                 >
                   <Text
                     as="span"
                     fontWeight="bold"
-                    color={"brand.200"}
-                    fontSize={"40px "}
+                    color={"primary_opacity50"}
+                    fontSize={{ base: "32px", md: "34px", lg: "40px" }}
                   >
                     {words[index]}
                   </Text>
@@ -145,10 +146,10 @@ const HeroSection = () => {
               </AnimatePresence>
             </Box>
             <Text
-              fontSize={{ base: "14px", md: "20px", lg: "24px" }}
+              fontSize={{ base: "16px", md: "20px", lg: "24px" }}
               //   lineHeight={{ base: "22px", md: "28px", lg: "31px" }}
               fontWeight={400}
-              color={"text.700"}
+              color={"brand.100"}
               mb="30px"
             >
               Frontend Developer with over 5+ years of experience and strong
@@ -170,9 +171,21 @@ const HeroSection = () => {
             </Text>
             <HStack gap={"30px"} mt={"40px"}>
               {socialLinks.map((link) => (
-                <Box key={link.name} _hover={{ color: "brand.700" }}>
+                <Link
+                  href={link.url}
+                  key={link.name}
+                  color="primary"
+                  width={"40px"}
+                  bg={"brand.600"}
+                  display={"flex"}
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  borderRadius={"50%"}
+                  height={"40px"}
+                  _hover={{ color: "primary", bg: "brand.700" }}
+                >
                   {link.icon}
-                </Box>
+                </Link>
               ))}
             </HStack>
           </Box>

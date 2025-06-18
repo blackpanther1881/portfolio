@@ -5,11 +5,11 @@ const variants = {
   outline: (props: any) => ({
     tab: {
       p:"4px",
-      color: `${props.colorMode}.text.100`,
+      color: `brand.400`,
       fontWeight: 800,
       bg: `${props.colorMode}.text.700`,
       _selected: {
-        color: `${props.colorMode}.text.700`,
+        color: `brand.200`,
         bg: `brand.600`,
         borderColor: `brand.700`,
         border: "0px solid",

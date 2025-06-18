@@ -62,16 +62,29 @@ export default function Header() {
       px={{ base: "30px", lg: "60px" }}
       py={"14px"}
       id={"is-sticky"}
-      background={isLandscape ? "bg.primary" : "transparent"}
-      backdropFilter={"blur(10px)"}
+      background={isLandscape ? "brand.600" : "transparent"}
+      backdropFilter={"blur(14px)"}
     >
       <Box maxWidth={"1440px"} mx={"auto"}>
         <Flex justify="space-between" align="center">
           <HStack>
             <Box pr={"100px"}>
               <Link href="/">
-                <Text color={"primary"} fontWeight={"bold"} fontSize={"30px"}>
+                <Text
+                  color={"primary"}
+                  display={{ base: "none", lg: "block" }}
+                  fontWeight={"bold"}
+                  fontSize={"30px"}
+                >
                   Raju Vemula
+                </Text>
+                <Text
+                  color={"primary"}
+                  fontWeight={"bold"}
+                  display={{ base: "block", lg: "none" }}
+                  fontSize={"30px"}
+                >
+                  RJV
                 </Text>
               </Link>
             </Box>

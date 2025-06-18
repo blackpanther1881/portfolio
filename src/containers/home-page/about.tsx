@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Text,
@@ -23,6 +23,7 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import { IconExternalLink, icons } from "@tabler/icons-react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const list = [
   {
@@ -177,28 +178,44 @@ const tools = [
   },
 ];
 
+const MotionBox = motion(Box);
+
 const About = () => {
-  const [isLaptop] = useMediaQuery("(min-width: 992px)");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({ width: "160px" });
+    }
+  }, [isInView, controls]);
+
   return (
     <Container
       id="about"
       maxW={"100%"}
       pt={{ base: "40px", lg: "80px" }}
-      px={{ base: "30px", lg: "70px" }}
-      //   bgImage={"/images/bg/blockchain-future-bg.svg"}
-      //   bgRepeat={"no-repeat"}
-      //   bgSize={"cover"}
+      px={{ base: "10px", lg: "70px" }}
     >
-      <Box maxW={"1240px"} mx={"auto"}>
+      <Box maxW={"1240px"} mx={"auto"} ref={ref}>
         <Heading
           flex={1}
-          color={"text.700"}
+          color={"white.700"}
           fontWeight={{ base: 600, md: 700 }}
           fontSize={{ base: "22px", md: "28px", lg: "48px" }}
           lineHeight={{ base: "30px", md: "36px", lg: "61px" }}
           mb={{ base: "20px", md: "30px", lg: "40px" }}
         >
           Technical Skills & Tools
+          <MotionBox
+            h="4px"
+            bg="yellow.400"
+            mt="2"
+            initial={{ width: 0 }}
+            animate={controls}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          />
         </Heading>
 
         <Tabs isFitted variant="outline" position={"unset"}>
@@ -209,7 +226,7 @@ const About = () => {
           </TabList>
           <TabPanels>
             <TabPanel overflow={"hidden"}>
-              <Text mb={4} fontSize={"16px"} color={"text.500"}>
+              <Text mb={4} fontSize={"16px"} color={"brand.300"}>
                 A snapshot of my go-to frontend stack, from building scalable
                 UIs with React, Next.js, and TypeScript to styling with Chakra
                 UI, Tailwind CSS, and MUI. Tools like Zustand, Redux, and React
@@ -224,6 +241,7 @@ const About = () => {
                     variant="outline"
                     size="sm"
                     mr={2}
+                    color={"brand.300"}
                     display="flex"
                     gap={2}
                     px={6}
@@ -241,7 +259,7 @@ const About = () => {
               </HStack>
             </TabPanel>
             <TabPanel>
-              <Text mb={4} fontSize={"16px"} color={"text.500"}>
+              <Text mb={4} fontSize={"16px"} color={"brand.300"}>
                 These are some of the key technologies, utilities, and popular
                 Web3 wallets I’ve worked with across multiple projects. From
                 integrating core libraries like Ethers.js and Web3.js to working
@@ -258,6 +276,7 @@ const About = () => {
                     mr={2}
                     display="flex"
                     gap={2}
+                    color={"brand.300"}
                     px={6}
                     py={5}
                   >
@@ -273,7 +292,7 @@ const About = () => {
               </HStack>
             </TabPanel>
             <TabPanel>
-              <Text mb={4} fontSize={"16px"} color={"text.500"}>
+              <Text mb={4} fontSize={"16px"} color={"brand.300"}>
                 These are the essential tools I rely on for design, development,
                 deployment, and monitoring. From collaborating in Figma,
                 version-controlling with GitHub, to deploying on Vercel and AWS
@@ -291,6 +310,7 @@ const About = () => {
                     mr={2}
                     display="flex"
                     gap={2}
+                    color={"brand.300"}
                     px={6}
                     py={5}
                   >

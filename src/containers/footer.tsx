@@ -41,7 +41,7 @@ const Footer = () => {
     <Box as={"footer"} bg={"primary_gradient"}>
       <Container
         maxW={"1440px"}
-        px={{ base: "30px", md: "80px" }}
+        px={{ base: "10px", md: "80px" }}
         py={{ base: "10px", md: "20px" }}
       >
         <Flex
