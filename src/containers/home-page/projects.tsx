@@ -47,7 +47,7 @@ const Projects = () => {
         //   ain-future-bg.svg"}
       //   bgRepeat={"no-repeat"}
       //   bgSize={"cover"}
-        px={0}
+      px={{ base: "0px", lg: "70px" }}
     >
       <Box
         py={{ base: "40px", lg: "100px" }}

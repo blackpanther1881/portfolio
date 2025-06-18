@@ -13,24 +13,24 @@ import {
 const socialLinks = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/raju-vemula-1b0a6b1b2/",
+    url: "https://www.linkedin.com/in/rajuvemula",
     icon: <IconBrandLinkedinFilled size={"20px"} />,
   },
   {
     name: "GitHub",
-    url: "/",
+    url: "https://github.com/blackpanther1881",
     icon: <IconBrandGithubFilled size={"20px"} />,
   },
-  {
-    name: "Mail",
-    url: "/",
-    icon: <IconMailFilled size={"20px"} />,
-  },
-  {
-    name: "Phone",
-    url: "/",
-    icon: <IconPhoneFilled size={"20px"} />,
-  },
+  // {
+  //   name: "Mail",
+  //   url: "/",
+  //   icon: <IconMailFilled size={"20px"} />,
+  // },
+  // {
+  //   name: "Phone",
+  //   url: "/",
+  //   icon: <IconPhoneFilled size={"20px"} />,
+  // },
 ];
 
 const words = ["Frontend Dev", "Web3 Enthusiast", "Can design too"];

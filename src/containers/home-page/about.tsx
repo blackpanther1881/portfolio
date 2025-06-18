@@ -196,7 +196,7 @@ const About = () => {
       id="about"
       maxW={"100%"}
       pt={{ base: "40px", lg: "80px" }}
-      px={0}
+      px={{ base: "0px", lg: "70px" }}
     >
       <Box maxW={"1240px"} mx={"auto"} ref={ref}>
         <Heading
