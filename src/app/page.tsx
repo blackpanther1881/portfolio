@@ -27,7 +27,7 @@ export default function Home() {
           // bgPos={"bottom"}
           // bgSize={"contain"}
           position={{ base: "relative", lg: "sticky" }}
-          top={{ base: "0px", lg: "0px" }}
+          top={{ base: "0px", lg: "100px" }}
           maxW={{ base: "100%", lg: "400px" }}
           maxH={"80vh"}
         >

@@ -62,7 +62,7 @@ export default function Header() {
       px={{ base: "30px", lg: "60px" }}
       py={"14px"}
       id={"is-sticky"}
-      background={isLandscape ? "brand.600" : "transparent"}
+      background={isLandscape ? "brand.600" : "#17171757"}
       backdropFilter={"blur(14px)"}
     >
       <Box maxWidth={"1440px"} mx={"auto"}>
