@@ -1,5 +1,8 @@
 const colors = {
   primary: "#FFBB1A",
+  primary_opacity50: "#FFBB1A77",
+  primary_gradient:
+      "linear-gradient(90deg, #ffbb1a26 0%, #ffbb1a0f 100%)",
   brand: {
     700: "#2D2D3A" ,
     600: "#343542",
