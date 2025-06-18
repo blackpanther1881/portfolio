@@ -196,7 +196,7 @@ const About = () => {
       id="about"
       maxW={"100%"}
       pt={{ base: "40px", lg: "80px" }}
-      px={{ base: "10px", lg: "70px" }}
+      px={0}
     >
       <Box maxW={"1240px"} mx={"auto"} ref={ref}>
         <Heading
@@ -226,7 +226,7 @@ const About = () => {
           </TabList>
           <TabPanels>
             <TabPanel overflow={"hidden"}>
-              <Text mb={4} fontSize={"16px"} color={"brand.300"}>
+              <Text mb={4} fontSize={"18px"} color={"brand.300"}>
                 A snapshot of my go-to frontend stack, from building scalable
                 UIs with React, Next.js, and TypeScript to styling with Chakra
                 UI, Tailwind CSS, and MUI. Tools like Zustand, Redux, and React
@@ -259,7 +259,7 @@ const About = () => {
               </HStack>
             </TabPanel>
             <TabPanel>
-              <Text mb={4} fontSize={"16px"} color={"brand.300"}>
+              <Text mb={4} fontSize={"18px"} color={"brand.300"}>
                 These are some of the key technologies, utilities, and popular
                 Web3 wallets I’ve worked with across multiple projects. From
                 integrating core libraries like Ethers.js and Web3.js to working
@@ -292,7 +292,7 @@ const About = () => {
               </HStack>
             </TabPanel>
             <TabPanel>
-              <Text mb={4} fontSize={"16px"} color={"brand.300"}>
+              <Text mb={4} fontSize={"18px"} color={"brand.300"}>
                 These are the essential tools I rely on for design, development,
                 deployment, and monitoring. From collaborating in Figma,
                 version-controlling with GitHub, to deploying on Vercel and AWS

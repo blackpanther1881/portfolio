@@ -25,163 +25,6 @@ import {
 import { motion, useAnimation, useInView } from "framer-motion";
 import { IconExternalLink, icons } from "@tabler/icons-react";
 
-const list = [
-  {
-    title: "Run Exclusive Dev Quests",
-    description: "Turn developers into power users on your chain",
-  },
-  {
-    title: "AI-Powered Docs & Support",
-    description: "Reduce friction in onboarding new devs",
-  },
-  {
-    title: "Smarter Developer Incentives",
-    description: "Reward devs for completing real-world blockchain challenges",
-  },
-];
-
-const techStack = [
-  {
-    name: "JavaScript",
-    icon: "/images/tech/js.png",
-  },
-  {
-    name: "TypeScript",
-    icon: "/images/tech/ts.png",
-  },
-  {
-    name: "React",
-    icon: "/images/tech/react.png",
-  },
-  {
-    name: "Next.js",
-    icon: "/images/tech/next.png",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "/images/tech/tailwind.png",
-  },
-  {
-    name: "Chakra UI",
-    icon: "/images/tech/chakra.png",
-  },
-
-  {
-    name: "Bootstrap",
-    icon: "/images/tech/bootstrap.png",
-  },
-  {
-    name: "CSS",
-    icon: "/images/tech/css.png",
-  },
-  {
-    name: "Figma",
-    icon: "/images/tech/figma.png",
-  },
-  {
-    name: "HTML",
-    icon: "/images/tech/html.png",
-  },
-  {
-    name: "MUI",
-    icon: "/images/tech/mui.png",
-  },
-  {
-    name: "React Query",
-    icon: "/images/tech/reactquery.png",
-  },
-  {
-    name: "Redux",
-    icon: "/images/tech/redux.png",
-  },
-  {
-    name: "Semantic UI",
-    icon: "/images/tech/semantic.png",
-  },
-  {
-    name: "Zustand",
-    icon: "/images/tech/zustand.svg",
-  },
-];
-
-const web3Stack = [
-  {
-    name: "Ethers.js",
-    icon: "/images/web3/ethers.svg",
-  },
-  {
-    name: "Web3.js",
-    icon: "/images/web3/web3js.jpg",
-  },
-  {
-    name: "BTC",
-    icon: "/images/web3/bitcoin.png",
-  },
-  {
-    name: "Ethereum",
-    icon: "/images/web3/eth.png",
-  },
-  {
-    name: "Binance Smart Chain",
-    icon: "/images/web3/bsc.png",
-  },
-  {
-    name: "Sui",
-    icon: "/images/web3/sui.webp",
-  },
-  {
-    name: "Cosmos",
-    icon: "/images/web3/cosmos.jpeg",
-  },
-  {
-    name: "Ledger",
-    icon: "/images/web3/ledger.svg",
-  },
-  {
-    name: "OKX",
-    icon: "/images/web3/okx.svg",
-  },
-  {
-    name: "Metamask",
-    icon: "/images/web3/metamask.svg",
-  },
-  {
-    name: "Bitget",
-    icon: "/images/web3/bitget.svg",
-  },
-  {
-    name: "Keplr",
-    icon: "/images/web3/keplr.png",
-  },
-];
-
-const projects = [
-  {
-    title: "Github",
-    description: "/images/tools/github.png",
-  },
-  {
-    name: "Figma",
-    icon: "/images/tools/figma.png",
-  },
-  {
-    name: "Vercel",
-    icon: "/images/tools/vercel.png",
-  },
-  {
-    name: "AWS",
-    icon: "/images/tools/aws.svg",
-  },
-  {
-    name: "Sentry",
-    icon: "/images/tools/sentry.svg",
-  },
-  {
-    name: "Google Analytics",
-    icon: "/images/tools/ga.png",
-  },
-];
-
 const MotionBox = motion(Box);
 
 const Projects = () => {
@@ -200,15 +43,16 @@ const Projects = () => {
       id="projects"
       maxW={"100%"}
       py={{ base: "40px", lg: "0" }}
-      //   bgImage={"/images/bg/blockchain-future-bg.svg"}
+      //   bgImage={"/images/bg/blockch
+        //   ain-future-bg.svg"}
       //   bgRepeat={"no-repeat"}
       //   bgSize={"cover"}
+        px={0}
     >
       <Box
         py={{ base: "40px", lg: "100px" }}
         maxW={"1240px"}
         mx={"auto"}
-        px={{ base: "10px", lg: "70px" }}
         ref={ref}
       >
         <Heading
