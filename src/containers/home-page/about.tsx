@@ -23,7 +23,8 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import { IconExternalLink, icons } from "@tabler/icons-react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, Reorder, useAnimation, useInView } from "framer-motion";
+
 
 const list = [
   {
@@ -65,7 +66,6 @@ const techStack = [
     name: "Chakra UI",
     icon: "/images/tech/chakra.png",
   },
-
   {
     name: "Bootstrap",
     icon: "/images/tech/bootstrap.png",
@@ -151,7 +151,7 @@ const web3Stack = [
   },
 ];
 
-const tools = [
+const toolsStack = [
   {
     name: "Github",
     icon: "/images/tools/github.png",
@@ -184,6 +184,9 @@ const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
+  const [techOrder, setTechOrder] = useState(techStack);
+  const [web3Order, setWeb3Order] = useState(web3Stack);
+  const [toolOrder, setToolOrder] = useState(toolsStack);
 
   useEffect(() => {
     if (isInView) {
@@ -233,30 +236,49 @@ const About = () => {
                 Query boost state and data management. I actively explore new
                 frameworks to stay sharp and build performant, maintainable apps
               </Text>
-              <HStack wrap={"wrap"} mb="30px">
-                {techStack.map((tech, index) => (
-                  <Button
-                    key={index}
-                    width={"fit-content"}
-                    variant="outline"
-                    size="sm"
-                    mr={2}
-                    color={"brand.300"}
-                    display="flex"
-                    gap={2}
-                    px={6}
-                    py={5}
-                  >
-                    <Image
-                      src={tech.icon}
-                      alt={"profile-icon"}
-                      width={"16px"}
-                      height={"16px"}
-                    />
-                    {tech.name}
-                  </Button>
-                ))}
-              </HStack>
+              <Reorder.Group
+                  axis="x"
+                  values={techOrder}
+                  onReorder={setTechOrder}
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "16px",
+                    marginBottom: "30px",
+                  }}
+                >
+                  {techOrder.map((tech, index) => (
+                      <Reorder.Item
+                          key={tech.name}
+                          value={tech}
+                          style={{ listStyle: "none" }}
+                          drag={true}
+                          as="div"
+                      >
+                        <Button
+                            key={index}
+                            width={"fit-content"}
+                            variant="outline"
+                            size="sm"
+                            mr={2}
+                            color={"brand.300"}
+                            display="flex"
+                            gap={2}
+                            px={6}
+                            py={5}
+                        >
+                          <Image
+                              src={tech.icon}
+                              alt={"profile-icon"}
+                              width={"16px"}
+                              height={"16px"}
+                          />
+                          {tech.name}
+                        </Button>
+                      </Reorder.Item>
+                  ))
+                  }
+                </Reorder.Group>
             </TabPanel>
             <TabPanel>
               <Text mb={4} fontSize={"18px"} color={"brand.300"}>
@@ -267,28 +289,48 @@ const About = () => {
                 Cosmos, and Binance Smart Chain
               </Text>
               <HStack wrap={"wrap"} mb="30px">
-                {web3Stack.map((tech, index) => (
-                  <Button
-                    key={index}
-                    width={"fit-content"}
-                    variant="outline"
-                    size="sm"
-                    mr={2}
-                    display="flex"
-                    gap={2}
-                    color={"brand.300"}
-                    px={6}
-                    py={5}
-                  >
-                    <Image
-                      src={tech.icon}
-                      alt={"profile-icon"}
-                      width={"16px"}
-                      height={"16px"}
-                    />
-                    {tech.name}
-                  </Button>
+                <Reorder.Group
+                    axis="x"
+                    values={techOrder}
+                    onReorder={setTechOrder}
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: "16px",
+                      marginBottom: "30px",
+                    }}
+                >
+                  {techOrder.map((tech, index) => (
+                      <Reorder.Item
+                          key={tech.name}
+                          value={tech}
+                          style={{ listStyle: "none" }}
+                          drag={true}
+                          as="div"
+                      >
+                        <Button
+                            key={index}
+                            width={"fit-content"}
+                            variant="outline"
+                            size="sm"
+                            mr={2}
+                            display="flex"
+                            gap={2}
+                            color={"brand.300"}
+                            px={6}
+                            py={5}
+                        >
+                          <Image
+                              src={tech.icon}
+                              alt={"profile-icon"}
+                              width={"16px"}
+                              height={"16px"}
+                          />
+                          {tech.name}
+                        </Button>
+                      </Reorder.Item>
                 ))}
+                </Reorder.Group>
               </HStack>
             </TabPanel>
             <TabPanel>
@@ -301,28 +343,49 @@ const About = () => {
                 in production environments.
               </Text>
               <HStack wrap={"wrap"} mb="30px">
-                {tools.map((tech, index) => (
-                  <Button
-                    key={index}
-                    width={"fit-content"}
-                    variant="outline"
-                    size="sm"
-                    mr={2}
-                    display="flex"
-                    gap={2}
-                    color={"brand.300"}
-                    px={6}
-                    py={5}
-                  >
-                    <Image
-                      src={tech.icon}
-                      alt={"profile-icon"}
-                      width={"16px"}
-                      height={"16px"}
-                    />
-                    {tech.name}
-                  </Button>
-                ))}
+                <Reorder.Group
+                    axis="x"
+                    values={techOrder}
+                    onReorder={setTechOrder}
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: "16px",
+                      marginBottom: "30px",
+                    }}
+                >
+                  {techOrder.map((tech, index) => (
+                      <Reorder.Item
+                          key={tech.name}
+                          value={tech}
+                          style={{ listStyle: "none" }}
+                          drag={true}
+                          as="div"
+                      >
+                        <Button
+                            key={index}
+                            width={"fit-content"}
+                            variant="outline"
+                            size="sm"
+                            mr={2}
+                            display="flex"
+                            gap={2}
+                            color={"brand.300"}
+                            px={6}
+                            py={5}
+                        >
+                          <Image
+                              src={tech.icon}
+                              alt={"profile-icon"}
+                              width={"16px"}
+                              height={"16px"}
+                          />
+                          {tech.name}
+                        </Button>
+                      </Reorder.Item>
+                  ))}
+                </Reorder.Group>
+
               </HStack>
             </TabPanel>
           </TabPanels>
