@@ -5,9 +5,9 @@ import { Box, ChakraProvider } from "@chakra-ui/react";
 import Footer from "@/containers/footer";
 import Header from "@/containers/header";
 import theme from "@/styles/theme";
-const baseUrl = "";
+const baseUrl = "https://www.rajuvemula.xyz";
 
-const GA_TRACKING_ID = "";
+const GA_TRACKING_ID = "G-ZPL0392487";
 
 export const metadata: Metadata = {
   title: "Rj.Vemula - Frontend Engineer & Web Experience Crafter",
