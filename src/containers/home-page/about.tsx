@@ -118,7 +118,7 @@ const web3Stack = [
     icon: "/images/web3/eth.png",
   },
   {
-    name: "Binance Smart Chain",
+    name: "BSC",
     icon: "/images/web3/bsc.png",
   },
   {
@@ -199,7 +199,7 @@ const About = () => {
       id="about"
       maxW={"100%"}
       pt={{ base: "40px", lg: "80px" }}
-      px={{ base: "0px", lg: "70px" }}
+      px={{ base: "0px", lg: "50px" }}
     >
       <Box maxW={"1240px"} mx={"auto"} ref={ref}>
         <Heading
@@ -228,7 +228,7 @@ const About = () => {
             <Tab>Tools</Tab>
           </TabList>
           <TabPanels>
-            <TabPanel overflow={"hidden"}>
+            <TabPanel overflow={"hidden"} px={2}>
               <Text mb={4} fontSize={"18px"} color={"brand.300"}>
                 A snapshot of my go-to frontend stack, from building scalable
                 UIs with React, Next.js, and TypeScript to styling with Chakra
@@ -255,32 +255,57 @@ const About = () => {
                           drag={true}
                           as="div"
                       >
-                        <Button
+                        <Box
                             key={index}
-                            width={"fit-content"}
-                            variant="outline"
-                            size="sm"
+                            width={"150px"}
+                            height={"100px"}
                             mr={2}
                             color={"brand.300"}
                             display="flex"
+                            flexDirection={"column"}
+                            alignItems={"center"}
+                            justifyContent={"center"}
                             gap={2}
-                            px={6}
-                            py={5}
+                           p={3}
+                            borderRadius={"8px"}
+                            border={"0.5px solid"}
+                            transition="box-shadow 0.3s ease"
+                            _hover={{
+                              boxShadow: "0 0 8px 2px rgba(255, 187, 26, 0.4)",
+                              ".icon-box": {
+                                transform: "rotate(360deg)",
+                              },
+                            }}
                         >
-                          <Image
-                              src={tech.icon}
-                              alt={"profile-icon"}
-                              width={"16px"}
-                              height={"16px"}
-                          />
-                          {tech.name}
-                        </Button>
+                          <Box
+                              borderRadius={"8px"}
+                              border={"0.5px solid"}
+                              width={"40px"}
+                              height={"40px"}
+                              display={"flex"}
+                              alignItems={"center"}
+                              justifyContent={"center"}
+
+                          >
+                           <Image
+                               src={tech.icon}
+                               transition="transform 0.6s ease"
+                               className="icon-box"
+                               alt={"profile-icon"}
+                               width={"16px"}
+                               height={"16px"}
+                           />
+                         </Box>
+                          <Text fontSize={"14px"} textAlign={"center"}>
+                            {tech.name}
+                          </Text>
+                        </Box>
                       </Reorder.Item>
                   ))
                   }
                 </Reorder.Group>
             </TabPanel>
-            <TabPanel>
+            <TabPanel pl={2}>
               <Text mb={4} fontSize={"18px"} color={"brand.300"}>
                 These are some of the key technologies, utilities, and popular
                 Web3 wallets I’ve worked with across multiple projects. From
@@ -308,26 +333,51 @@ const About = () => {
                           drag={true}
                           as="div"
                       >
-                        <Button
+                        <Box
                             key={index}
-                            width={"fit-content"}
-                            variant="outline"
-                            size="sm"
+                            width={"150px"}
+                            height={"100px"}
                             mr={2}
-                            display="flex"
-                            gap={2}
                             color={"brand.300"}
-                            px={6}
-                            py={5}
+                            display="flex"
+                            flexDirection={"column"}
+                            alignItems={"center"}
+                            gap={2}
+                            p={3}
+                            borderRadius={"8px"}
+                            border={"0.5px solid"}
+                            transition="box-shadow 0.3s ease"
+                            justifyContent={"center"}
+                            _hover={{
+                              boxShadow: "0 0 8px 2px rgba(255, 187, 26, 0.4)",
+                              ".icon-box": {
+                                transform: "rotate(360deg)",
+                              },
+                            }}
                         >
-                          <Image
-                              src={web3.icon}
-                              alt={"profile-icon"}
-                              width={"16px"}
-                              height={"16px"}
-                          />
-                          {web3.name}
-                        </Button>
+                          <Box
+                              borderRadius={"8px"}
+                              border={"0.5px solid"}
+                              width={"40px"}
+                              height={"40px"}
+                              display={"flex"}
+                              alignItems={"center"}
+                              justifyContent={"center"}
+
+                          >
+                            <Image
+                                src={web3.icon}
+                                transition="transform 0.6s ease"
+                                className="icon-box"
+                                alt={"profile-icon"}
+                                width={"16px"}
+                                height={"16px"}
+                            />
+                          </Box>
+                          <Text fontSize={"14px"} textAlign={"center"}>
+                            {web3.name}
+                          </Text>
+                        </Box>
                       </Reorder.Item>
                 ))}
                 </Reorder.Group>
@@ -362,26 +412,51 @@ const About = () => {
                           drag={true}
                           as="div"
                       >
-                        <Button
+                        <Box
                             key={index}
-                            width={"fit-content"}
-                            variant="outline"
-                            size="sm"
+                            width={"150px"}
+                            height={"100px"}
                             mr={2}
-                            display="flex"
-                            gap={2}
                             color={"brand.300"}
-                            px={6}
-                            py={5}
+                            display="flex"
+                            flexDirection={"column"}
+                            alignItems={"center"}
+                            justifyContent={"center"}
+                            gap={2}
+                           p={3}
+                            borderRadius={"8px"}
+                            border={"0.5px solid"}
+                            transition="box-shadow 0.3s ease"
+                            _hover={{
+                              boxShadow: "0 0 8px 2px rgba(255, 187, 26, 0.4)",
+                              ".icon-box": {
+                                transform: "rotate(360deg)",
+                              },
+                            }}
                         >
-                          <Image
-                              src={tool.icon}
-                              alt={"profile-icon"}
-                              width={"16px"}
-                              height={"16px"}
-                          />
-                          {tool.name}
-                        </Button>
+                          <Box
+                              borderRadius={"8px"}
+                              border={"0.5px solid"}
+                              width={"40px"}
+                              height={"40px"}
+                              display={"flex"}
+                              alignItems={"center"}
+                              justifyContent={"center"}
+
+                          >
+                            <Image
+                                src={tool.icon}
+                                transition="transform 0.6s ease"
+                                className="icon-box"
+                                alt={"profile-icon"}
+                                width={"16px"}
+                                height={"16px"}
+                            />
+                          </Box>
+                          <Text fontSize={"14px"} textAlign={"center"}>
+                            {tool.name}
+                          </Text>
+                        </Box> 
                       </Reorder.Item>
                   ))}
                 </Reorder.Group>

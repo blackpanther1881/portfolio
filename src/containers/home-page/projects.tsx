@@ -5,28 +5,37 @@ import {
   Text,
   Code,
   Link,
-  VStack,
-  HStack,
   Container,
-  Avatar,
-  Image,
-  Flex,
-  Wrap,
-  Heading,
-  Button,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  Circle,
-  useMediaQuery,
+  Heading, SimpleGrid,
 } from "@chakra-ui/react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { IconExternalLink, icons } from "@tabler/icons-react";
+
+
+const stats = [
+  {
+    value: "4+",
+    label: "Years Experience",
+    bg: "#0B2852",
+    color: "#4F9DFF",
+    border: "#1C4E9A",
+  },
+  {
+    value: "10+",
+    label: "Projects Completed",
+    bg: "#082B23",
+    color: "#45EC9C",
+    border: "#25C686",
+  },
+  {
+    value: "20+",
+    label: "Technologies Used",
+    bg: "#2B1B47",
+    color: "#B974FF",
+    border: "#9D4EDD",
+  },
+];
 
 const MotionBox = motion(Box);
-
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -34,26 +43,24 @@ const Projects = () => {
 
   useEffect(() => {
     if (isInView) {
-      controls.start({ width: "160px" });
+      controls.start({ width: "140px" });
     }
   }, [isInView, controls]);
-  const [isLaptop] = useMediaQuery("(min-width: 992px)");
+
   return (
     <Container
       id="projects"
       maxW={"100%"}
-      py={{ base: "40px", lg: "0" }}
-      //   bgImage={"/images/bg/blockch
-        //   ain-future-bg.svg"}
-      //   bgRepeat={"no-repeat"}
       //   bgSize={"cover"}
-      px={{ base: "0px", lg: "70px" }}
+      px={{ base: "0px", lg: "50px" }}
+      pb={"60px"}
     >
       <Box
-        py={{ base: "40px", lg: "100px" }}
+        pt={{ base: "40px", lg: "80px" }}
         maxW={"1240px"}
         mx={"auto"}
         ref={ref}
+        mb={8}
       >
         <Heading
           flex={1}
@@ -61,9 +68,21 @@ const Projects = () => {
           fontWeight={{ base: 600, md: 700 }}
           fontSize={{ base: "22px", md: "28px", lg: "48px" }}
           lineHeight={{ base: "30px", md: "36px", lg: "61px" }}
-          mb={5}
+          mb={8}
         >
-          Professional Experience
+          Projects
+          {/*<Box*/}
+          {/*    width="48px"*/}
+          {/*    height="48px"*/}
+          {/*    borderRadius="full"*/}
+          {/*    display="flex"*/}
+          {/*    alignItems="center"*/}
+          {/*    justifyContent="center"*/}
+          {/*    bgGradient="linear(to-br, #FFBB1A, #FF6B6B)"*/}
+          {/*>*/}
+          {/*  <Image src="/icons/hat.svg" alt="icon" width="20px" height="20px" />*/}
+          {/*</Box>*/}
+
           <MotionBox
             h="4px"
             bg="yellow.400"
@@ -73,14 +92,7 @@ const Projects = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
         </Heading>
-        <Text
-          fontWeight={{ base: 600, md: 700 }}
-          fontSize={{ base: "16px", md: "20px", lg: "22px" }}
-          mb={{ base: "20px", md: "30px", lg: "40px" }}
-          color={"brand.300"}
-        >
-          Persistence Labs | Feb 2020 – Present (5 years+)
-        </Text>
+
         <Box
           bg={"brand.600"}
           px={{ base: "20px", md: "30px" }}
@@ -88,7 +100,7 @@ const Projects = () => {
           borderRadius={"20px"}
           boxShadow={"md"}
           borderX={"6px solid"}
-          mb={8}
+          mb={4}
         >
           <Text
             fontWeight={{ base: 600, md: 700 }}
@@ -190,7 +202,6 @@ const Projects = () => {
           borderRadius={"20px"}
           boxShadow={"md"}
           borderX={"6px solid"}
-          mb={8}
         >
           <Text
             fontWeight={{ base: 600, md: 700 }}
@@ -222,6 +233,35 @@ const Projects = () => {
           </Link>
         </Box>
       </Box>
+
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
+        {stats.map((stat, index) => (
+            <Box
+                key={index}
+                border="0.5px solid"
+                borderColor="#FFC300"
+                borderRadius="xl"
+                p={8}
+                bg="#343542"
+                role={"group"}
+                textAlign="center"
+                transition="all 0.3s ease-in-out"
+                transform="scale(1)"
+                _hover={{
+                  transform: "scale(1.05)",
+                }}
+                boxShadow="0 0 10px #FFC30066"
+            >
+              <Text fontSize="4xl" fontWeight="bold" color={"#ffbb1b"}     transition="transform 0.3s ease-in-out"
+                    _groupHover={{ transform: "scale(1.1)" }}>
+                {stat.value}
+              </Text>
+              <Text fontSize="lg" color="gray.300" mt={2}>
+                {stat.label}
+              </Text>
+            </Box>
+        ))}
+      </SimpleGrid>
     </Container>
   );
 };

@@ -6,6 +6,7 @@ import Projects from "@/containers/home-page/projects";
 import { motion } from "framer-motion";
 import {useEffect, useRef, useState} from "react";
 import ChatGreeting from "@/containers/greetings";
+import Experience from "@/containers/home-page/experience";
 
 const MotionBox = motion(Box);
 
@@ -99,7 +100,8 @@ export default function Home() {
 
         <Box>
           <HeroSection />
-          <About />
+            <Experience/>
+            <About />
           <Projects />
         </Box>
       </HStack>
