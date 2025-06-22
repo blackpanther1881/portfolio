@@ -40,7 +40,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log(activeSection, "activeSection");
 
   useEffect(() => {
     const handleScroll = () => {
