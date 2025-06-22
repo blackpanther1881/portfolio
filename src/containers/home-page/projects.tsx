@@ -13,25 +13,16 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 const stats = [
   {
-    value: "4+",
+    value: "5+",
     label: "Years Experience",
-    bg: "#0B2852",
-    color: "#4F9DFF",
-    border: "#1C4E9A",
   },
   {
     value: "10+",
     label: "Projects Completed",
-    bg: "#082B23",
-    color: "#45EC9C",
-    border: "#25C686",
   },
   {
     value: "20+",
     label: "Technologies Used",
-    bg: "#2B1B47",
-    color: "#B974FF",
-    border: "#9D4EDD",
   },
 ];
 
