@@ -4,16 +4,19 @@ import HeroSection from "@/containers/home-page/hero-section";
 import About from "@/containers/home-page/about";
 import Projects from "@/containers/home-page/projects";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import {useEffect, useRef, useState} from "react";
+import ChatGreeting from "@/containers/greetings";
 
 const MotionBox = motion(Box);
 
+
+
 export default function Home() {
   const cardRef = useRef<HTMLDivElement>(null);
-  const isDesktop = useBreakpointValue({ base: false, lg: true });
 
   return (
     <Box maxWidth={"1440px"} mx={"auto"} px={4}>
+        <ChatGreeting/>
       <HStack
         alignContent={"flex-start"}
         alignItems={"flex-start"}

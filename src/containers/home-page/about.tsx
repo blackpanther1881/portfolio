@@ -291,8 +291,8 @@ const About = () => {
               <HStack wrap={"wrap"} mb="30px">
                 <Reorder.Group
                     axis="x"
-                    values={techOrder}
-                    onReorder={setTechOrder}
+                    values={web3Order}
+                    onReorder={setWeb3Order}
                     style={{
                       display: "flex",
                       flexWrap: "wrap",
@@ -300,10 +300,10 @@ const About = () => {
                       marginBottom: "30px",
                     }}
                 >
-                  {techOrder.map((tech, index) => (
+                  {web3Order.map((web3, index) => (
                       <Reorder.Item
-                          key={tech.name}
-                          value={tech}
+                          key={web3.name}
+                          value={web3}
                           style={{ listStyle: "none" }}
                           drag={true}
                           as="div"
@@ -321,12 +321,12 @@ const About = () => {
                             py={5}
                         >
                           <Image
-                              src={tech.icon}
+                              src={web3.icon}
                               alt={"profile-icon"}
                               width={"16px"}
                               height={"16px"}
                           />
-                          {tech.name}
+                          {web3.name}
                         </Button>
                       </Reorder.Item>
                 ))}
@@ -345,8 +345,8 @@ const About = () => {
               <HStack wrap={"wrap"} mb="30px">
                 <Reorder.Group
                     axis="x"
-                    values={techOrder}
-                    onReorder={setTechOrder}
+                    values={toolOrder}
+                    onReorder={setToolOrder}
                     style={{
                       display: "flex",
                       flexWrap: "wrap",
@@ -354,10 +354,10 @@ const About = () => {
                       marginBottom: "30px",
                     }}
                 >
-                  {techOrder.map((tech, index) => (
+                  {toolOrder.map((tool, index) => (
                       <Reorder.Item
-                          key={tech.name}
-                          value={tech}
+                          key={tool.name}
+                          value={tool}
                           style={{ listStyle: "none" }}
                           drag={true}
                           as="div"
@@ -375,12 +375,12 @@ const About = () => {
                             py={5}
                         >
                           <Image
-                              src={tech.icon}
+                              src={tool.icon}
                               alt={"profile-icon"}
                               width={"16px"}
                               height={"16px"}
                           />
-                          {tech.name}
+                          {tool.name}
                         </Button>
                       </Reorder.Item>
                   ))}
