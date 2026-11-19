@@ -13,7 +13,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 const stats = [
   {
-    value: "5+",
+    value: "6+",
     label: "Years Experience",
   },
   {
