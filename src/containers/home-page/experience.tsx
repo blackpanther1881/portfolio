@@ -69,7 +69,7 @@ const Experience = () => {
                     mb={{ base: "20px", md: "30px", lg: "40px" }}
                     color={"brand.300"}
                 >
-                    Persistence Labs | Feb 2020 – Present (6 years+)
+                    Persistence Labs | Feb 2020 – Dec 2025 (6 years+)
                 </Text>
 
                 <UnorderedList spacing={4} listStyleType={"none"}>
