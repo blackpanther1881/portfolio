@@ -152,7 +152,7 @@ const HeroSection = () => {
               color={"brand.100"}
               mb="30px"
             >
-              Frontend Developer with over 5+ years of experience and strong
+              Frontend Developer with over 6+ years of experience and strong
               expertise in Web2/Web3 and DeFi applications. Demonstrated
               expertise in designing and implementing scalable, high-performance
               decentralised applications (dApps) using React.js, Next.js, and
