@@ -26,10 +26,17 @@ export default function ChatGreeting() {
             .then((data) => setLocation(data));
     }, []);
 
+
     useEffect(() => {
-        const timeout = setTimeout(() => setShow(true), 2000); // Show after 2s
-        return () => clearTimeout(timeout);
-    }, []);
+    if (!location) return;
+
+    const timeout = setTimeout(() => {
+      setShow(true);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, [location]);
+
 
     if (!visible) return null;
 
